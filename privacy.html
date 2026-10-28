@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brushblade Privacy Policy</title>
+<style>
+body{margin:0;background:#F6F1E7;color:#1F1B16;font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Noto Sans CJK SC",sans-serif}
+main{max-width:720px;margin:0 auto;padding:16px 16px 48px}
+nav{max-width:720px;margin:0 auto;padding:12px 16px 0;font-size:14px}
+nav a{margin-right:16px}
+h1{font-size:1.6em;line-height:1.3;margin:.6em 0}
+h2{font-size:1.25em;margin:1.6em 0 .4em;border-bottom:1px solid #D8CFBE;padding-bottom:.2em}
+h3{font-size:1.05em;margin:1.2em 0 .3em}
+a{color:#8C2A1C;overflow-wrap:anywhere}
+code{background:#EAE2D2;padding:0 .3em;border-radius:3px}
+blockquote{margin:1em 0;padding:.2em 1em;border-left:3px solid #8C2A1C;color:#4A4238}
+ul{padding-left:1.4em}
+</style>
+</head>
+<body>
+<nav><a href="index.html">Support</a><a href="privacy-zh.html">中文</a></nav>
+<main>
+<h1>Brushblade Privacy Policy</h1>
+<p><em>Effective date: 2026-10-29</em><br>
+<em>Last updated: 2026-10-29</em></p>
+<p>This Privacy Policy explains how <strong>Brushblade</strong> (Chinese title 《字·斗》, the "Game") handles information.<br>
+The Game is developed and published by <strong>Eugene Wu</strong>, an individual developer ("I", "me", "the developer").</p>
+<p>Contact: <strong><a href="mailto:eugenewwj@gmail.com">eugenewwj@gmail.com</a></strong></p>
+<h2>1. Summary</h2>
+<ul>
+<li>The Game has <strong>no accounts, no login, no chat, and no social features</strong>. I do not ask for your name, email, phone number, contacts, photos, or precise location.</li>
+<li>Your game progress is stored <strong>only on your device</strong>. I do not run a server that receives your save data.</li>
+<li>The Game shows <strong>optional rewarded video ads</strong> provided by <strong>Google AdMob</strong>. Ads only play when you choose to watch one in exchange for an in-game reward. There are no forced (interstitial), banner, or app-open ads.</li>
+<li>All ad requests are sent as <strong>non-personalized ads</strong> requests. The Game does <strong>not</strong> ask for App Tracking Transparency permission on iOS and does <strong>not</strong> access the iOS Advertising Identifier (IDFA).</li>
+<li>Google, as the ad provider, automatically collects certain device and usage data when an ad is requested or shown. This is described in Section 3.</li>
+<li>The Game contains <strong>no in-app purchases</strong> and no analytics or crash-reporting SDK of its own.</li>
+</ul>
+<h2>2. Information the Game handles itself</h2>
+<h3>2.1 Game save data (stays on your device)</h3>
+<p>Your progress (collected characters, levels, in-game currency, chests, settings such as sound and battle speed, and the floor you reached) is written to a file inside the Game's private storage on your device. The file is integrity-protected to prevent tampering. It is <strong>not uploaded</strong> to me or to any server.</p>
+<p>Your operating system may include this file in your own device backups (for example iCloud backup on iOS or Android backup), according to your device settings. Those backups are controlled by you and your platform provider; I have no access to them.</p>
+<p>If you uninstall the Game, the save file is deleted along with it (unless restored from your own backup).</p>
+<h3>2.2 Time check</h3>
+<p>To make daily resets and chest timers fair, the Game asks a public time service for the current time when it starts (currently <code>worldtimeapi.org</code>; if that fails, it reads the standard <code>Date</code> header from a well-known HTTPS website such as <code>google.com</code>). The request contains <strong>no identifiers and no game data</strong>. As with any internet request, the receiving server sees your IP address and basic technical information (such as the HTTP user agent). I do not receive or store this information. If the request fails, the Game simply uses your device clock.</p>
+<h3>2.3 Device identifier used for development testing only</h3>
+<p>The Game contains code that reads the device's vendor identifier (IDFV on iOS, or Unity's device identifier on Android) <strong>locally on the device</strong>, solely so that the developer's own test devices can skip ads during testing. This identifier is <strong>never transmitted</strong> by the Game, and in release builds it is not written to logs.</p>
+<h2>3. Advertising (Google AdMob)</h2>
+<p>The Game uses the Google Mobile Ads SDK (AdMob) to show optional rewarded video ads, and the Google User Messaging Platform (UMP) SDK to request consent where required by law.</p>
+<p>When the Game requests or shows an ad, Google's SDK may automatically collect and process the following on Google's behalf:</p>
+<ul>
+<li><strong>IP address</strong>, which may be used to estimate the device's general (coarse) location;</li>
+<li><strong>Device identifiers</strong>, such as the Android Advertising ID, App Set ID, or other app- or developer-scoped identifiers (on iOS, the IDFA is not available to the SDK because the Game does not request tracking permission);</li>
+<li><strong>Product interaction data</strong>, such as app launches, taps, and video views;</li>
+<li><strong>Advertising data</strong>, such as which ads were shown;</li>
+<li><strong>Diagnostic data</strong>, such as crash logs, app launch time, hang rate, and energy usage.</li>
+</ul>
+<p>Google uses this data to deliver ads, measure ad performance, prevent fraud and abuse, and diagnose and improve its services. Because the Game requests <strong>non-personalized ads only</strong>, the ads you see are selected based on contextual information (such as the app itself and your general location), not on a profile of your interests. Note that non-personalized ads still use device identifiers and similar data for frequency capping, aggregated reporting, and fraud prevention.</p>
+<p>Google's processing is governed by Google's own policies:</p>
+<ul>
+<li>How Google uses information from apps that use its services: <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a></li>
+<li>Google Privacy Policy: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></li>
+<li>Google advertising technologies: <a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a></li>
+</ul>
+<h3>3.1 Consent in the EEA, the UK and Switzerland</h3>
+<p>If you are in the European Economic Area, the United Kingdom, or Switzerland, the Game shows a consent message provided by Google (UMP) before any ads are requested. You can make or change your choices at any time from the Game's settings. Your consent choice is stored on your device by the UMP SDK.</p>
+<h3>3.2 Your controls</h3>
+<ul>
+<li>You never have to watch an ad. All ads are optional and only start when you tap a button to watch one.</li>
+<li>On Android, you can reset or delete your Advertising ID in your device's settings (Settings &gt; Privacy &gt; Ads, or Settings &gt; Google &gt; Ads, depending on the device).</li>
+<li>On iOS, the Game does not request tracking permission, so the IDFA is not shared.</li>
+</ul>
+<h2>4. In-app purchases</h2>
+<p>The Game currently has <strong>no in-app purchases</strong>. In-game currency and chests can only be earned by playing or by watching optional rewarded ads; they cannot be bought with real money and have no real-world value.</p>
+<h2>5. Legal bases (EEA/UK users)</h2>
+<p>For the limited processing described above:</p>
+<ul>
+<li>Storing your save data on your device and checking the time are necessary to provide the Game you requested (performance of a contract / legitimate interests).</li>
+<li>Ad delivery by Google is based on your consent where consent is required, and otherwise on legitimate interests in funding a free game, as described in Google's policies.</li>
+</ul>
+<h2>6. Data retention</h2>
+<ul>
+<li>Save data remains on your device until you uninstall the Game or clear its data.</li>
+<li>I do not keep any copy of your data on servers I control.</li>
+<li>Retention of data collected by Google is described in Google's Privacy Policy.</li>
+</ul>
+<h2>7. Children</h2>
+<p>The Game is <strong>not directed to children under 13</strong> (or the equivalent minimum age in your country) and is not designed for the Google Play Families program or the App Store Kids category. I do not knowingly collect personal information from children. If you believe a child has provided personal information through the Game, contact me at the address above.</p>
+<h2>8. Your rights</h2>
+<p>Depending on where you live (for example under the GDPR, UK GDPR, or the California Consumer Privacy Act), you may have rights to access, delete, correct, or object to the processing of your personal information, and to withdraw consent.</p>
+<p>Because the Game does not send your save data or any identifiers to me, I generally hold <strong>no personal information about you</strong> that I could access or delete. You can delete all game data by uninstalling the Game. For data processed by Google in connection with ads, you can exercise your rights through Google (see the links in Section 3). You may also contact me at the address above, and you have the right to lodge a complaint with your local data protection authority.</p>
+<p>I do <strong>not sell</strong> your personal information and do not "share" it for cross-context behavioral advertising as those terms are defined under California law, other than the limited, non-personalized ad delivery by Google described above.</p>
+<h2>9. Security</h2>
+<p>Network requests made by the Game and by Google's SDK use encrypted connections (HTTPS/TLS). The local save file is integrity-protected.</p>
+<h2>10. Changes to this policy</h2>
+<p>If this policy changes, I will update the "Last updated" date above and post the new version at this address. For material changes, I will also give notice in the Game or on its store page.</p>
+<h2>11. Contact</h2>
+<p>Eugene Wu<br>
+Email: <strong><a href="mailto:eugenewwj@gmail.com">eugenewwj@gmail.com</a></strong></p>
+</main>
+</body>
+</html>
