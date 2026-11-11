@@ -23,28 +23,35 @@ ul{padding-left:1.4em}
 <main>
 <h1>Brushblade Privacy Policy</h1>
 <p><em>Effective date: 2026-10-29</em><br>
-<em>Last updated: 2026-10-29</em></p>
+<em>Last updated: 2026-11-11</em></p>
 <p>This Privacy Policy explains how <strong>Brushblade</strong> (Chinese title 《字·斗》, the "Game") handles information.<br>
 The Game is developed and published by <strong>Eugene Wu</strong>, an individual developer ("I", "me", "the developer").</p>
 <p>Contact: <strong><a href="mailto:eugenewwj@gmail.com">eugenewwj@gmail.com</a></strong></p>
 <h2>1. Summary</h2>
 <ul>
-<li>The Game has <strong>no accounts, no login, no chat, and no social features</strong>. I do not ask for your name, email, phone number, contacts, photos, or precise location.</li>
-<li>Your game progress is stored <strong>only on your device</strong>. I do not run a server that receives your save data.</li>
+<li>The Game has <strong>no account system of its own, no chat, and no social features</strong>. I do not ask for your name, email, phone number, contacts, photos, or precise location. On Android, cloud save requires signing in to your Google Play Games account; the signed-in state is used only to read and write your save (see Section 2.1).</li>
+<li>Your game progress is stored on your device. With cloud save on, it is also stored in <strong>your own iCloud (iOS) or Google Play Games (Android) account</strong>, which is managed by the platform provider. I do not run a server that receives your save data, and I cannot access your cloud save.</li>
 <li>The Game shows <strong>optional rewarded video ads</strong> provided by <strong>Google AdMob</strong>. Ads only play when you choose to watch one in exchange for an in-game reward. There are no forced (interstitial), banner, or app-open ads.</li>
 <li>All ad requests are sent as <strong>non-personalized ads</strong> requests. The Game does <strong>not</strong> ask for App Tracking Transparency permission on iOS and does <strong>not</strong> access the iOS Advertising Identifier (IDFA).</li>
 <li>Google, as the ad provider, automatically collects certain device and usage data when an ad is requested or shown. This is described in Section 3.</li>
-<li>The Game contains <strong>no in-app purchases</strong> and no analytics or crash-reporting SDK of its own.</li>
+<li>The Game contains <strong>no in-app purchases</strong>.</li>
+<li>To improve difficulty and content, the Game uses <strong>Google Firebase Analytics</strong> to collect <strong>anonymous gameplay statistics</strong> (for example which floor you reached, where a run ended, whether the tutorial was completed). This data contains no name or contact details and is not used for ad targeting; see Section 2.4. There is no crash-reporting SDK.</li>
 </ul>
 <h2>2. Information the Game handles itself</h2>
-<h3>2.1 Game save data (stays on your device)</h3>
-<p>Your progress (collected characters, levels, in-game currency, chests, settings such as sound and battle speed, and the floor you reached) is written to a file inside the Game's private storage on your device. The file is integrity-protected to prevent tampering. It is <strong>not uploaded</strong> to me or to any server.</p>
-<p>Your operating system may include this file in your own device backups (for example iCloud backup on iOS or Android backup), according to your device settings. Those backups are controlled by you and your platform provider; I have no access to them.</p>
-<p>If you uninstall the Game, the save file is deleted along with it (unless restored from your own backup).</p>
+<h3>2.1 Game save data (your device and your own cloud account)</h3>
+<p>Your progress (collected characters, levels, in-game currency, chests, settings such as sound and battle speed, and the floor you reached) is written to a file inside the Game's private storage on your device. The file is integrity-protected to prevent tampering. It is <strong>not uploaded to me</strong>; I run no server that receives save data.</p>
+<p><strong>Cloud save (can be turned off in Settings).</strong> So that you can recover your progress after switching or reinstalling, the Game stores a compressed copy of the save (same content as above, integrity-protected, <strong>containing no account information</strong>) in your own platform cloud storage: <strong>iCloud key-value storage</strong> on iOS, and <strong>Google Play Games "Saved Games"</strong> on Android. This data lives in your Apple or Google account, is controlled by you and the platform provider, <strong>never passes through any server of mine, and I cannot access it</strong>. On Android, cloud save requires signing in to Play Games; the Game only uses the signed-in state to read and write this save and does not read or store your Google account details (name, email, avatar, and so on). If your progress differs between devices, you choose which copy to keep. At any time you can turn off "Auto Sync" in <strong>Settings → Cloud Save</strong>, or tap "Delete Cloud Data" to remove the cloud copy; progress on this device is not affected. For how the platform handles cloud saves, see Apple's and Google's privacy policies.</p>
+<p>Your operating system may include the local save file in your own device backups (for example iCloud backup on iOS or Android backup), according to your device settings. Those backups are controlled by you and your platform provider; I have no access to them.</p>
+<p>If you uninstall the Game, the save file on the device is deleted along with it; the cloud copy stays in your account, can be restored after reinstalling, and can be deleted beforehand in Settings → Cloud Save.</p>
 <h3>2.2 Time check</h3>
-<p>To make daily resets and chest timers fair, the Game asks a public time service for the current time when it starts (currently <code>worldtimeapi.org</code>; if that fails, it reads the standard <code>Date</code> header from a well-known HTTPS website such as <code>google.com</code>). The request contains <strong>no identifiers and no game data</strong>. As with any internet request, the receiving server sees your IP address and basic technical information (such as the HTTP user agent). I do not receive or store this information. If the request fails, the Game simply uses your device clock.</p>
+<p>To make daily resets and chest timers fair, the Game asks its own time service (running on Cloudflare) for the current time when it starts and each time it returns to the foreground; if that fails, it reads the standard <code>Date</code> header from a well-known HTTPS website such as <code>google.com</code>. The request contains <strong>no identifiers and no game data</strong>. As with any internet request, the receiving server sees your IP address and basic technical information (such as the HTTP user agent). The Game's time service keeps no request logs, and I do not receive or store this information. If the request fails, the Game simply uses your device clock (or keeps its last successful time check).</p>
 <h3>2.3 Device identifier used for development testing only</h3>
 <p>The Game contains code that reads the device's vendor identifier (IDFV on iOS, or Unity's device identifier on Android) <strong>locally on the device</strong>, solely so that the developer's own test devices can skip ads during testing. This identifier is <strong>never transmitted</strong> by the Game, and in release builds it is not written to logs.</p>
+<h3>2.4 Anonymous gameplay analytics (Google Firebase Analytics)</h3>
+<p>The Game uses Google's <strong>Firebase Analytics</strong> SDK to collect <strong>anonymous gameplay statistics</strong>, for one purpose: understanding where players get stuck and which content is too hard or too easy, so the Game can be tuned. What is collected are gameplay events, such as: the app opening and going to the background, which screen was opened, the start and end of a tower run (floor reached, duration, outcome), the number of turns and the result of each battle, how far the tutorial got, which character card was picked, which chest was opened, which ad placement was watched, in-game-currency shop purchases, the outcome of cloud save syncs (success or failure reason, the choice made on a conflict, and whether iCloud or Play Games is used; never the save content), and the in-game numbers that accompany them (level, ink balance, number of cards, and so on).</p>
+<p>Together with these events the Firebase SDK automatically collects: a <strong>randomly generated app-instance identifier</strong> (reset when you uninstall), device model and OS version, app version, language, country/region (an approximate location estimated from the IP address), and automatic events such as session duration. The Game does <strong>not</strong> send Firebase your name, email, contacts, precise location or any account information (the Game has none of these). Ad-personalization signals are disabled in Firebase; this data is <strong>not</strong> used to target ads to you or for ad attribution.</p>
+<p>The data is processed by Google on my behalf and stored on Google's servers; what I see in the Firebase console are aggregate reports and anonymous event streams. Google's processing is governed by its own terms: <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a> and <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a> .</p>
+<p>If you are in the EEA, the UK or Switzerland, this collection only happens after you consent through the consent screen described in Section 3.1; if you decline or withdraw consent, the SDK stops collecting and uploading. Players elsewhere currently have no in-game switch; uninstalling the Game resets the app-instance identifier, after which earlier data can no longer be associated with your device.</p>
 <h2>3. Advertising (Google AdMob)</h2>
 <p>The Game uses the Google Mobile Ads SDK (AdMob) to show optional rewarded video ads, and the Google User Messaging Platform (UMP) SDK to request consent where required by law.</p>
 <p>When the Game requests or shows an ad, Google's SDK may automatically collect and process the following on Google's behalf:</p>
@@ -75,23 +82,26 @@ The Game is developed and published by <strong>Eugene Wu</strong>, an individual
 <h2>5. Legal bases (EEA/UK users)</h2>
 <p>For the limited processing described above:</p>
 <ul>
-<li>Storing your save data on your device and checking the time are necessary to provide the Game you requested (performance of a contract / legitimate interests).</li>
+<li>Storing your save data on your device, syncing it to your own cloud account according to your settings, and checking the time are necessary to provide the Game you requested (performance of a contract / legitimate interests).</li>
+<li>Anonymous gameplay analytics (Section 2.4) is based on your consent where consent is required (collected together with the ad consent), and otherwise on my legitimate interest in improving the Game.</li>
 <li>Ad delivery by Google is based on your consent where consent is required, and otherwise on legitimate interests in funding a free game, as described in Google's policies.</li>
 </ul>
 <h2>6. Data retention</h2>
 <ul>
 <li>Save data remains on your device until you uninstall the Game or clear its data.</li>
+<li>The cloud save remains in your own iCloud / Google Play Games account until you delete the cloud data in Settings → Cloud Save in the Game, or delete it through Apple / Google; retention is governed by the platform provider's policies.</li>
 <li>I do not keep any copy of your data on servers I control.</li>
-<li>Retention of data collected by Google is described in Google's Privacy Policy.</li>
+<li>Firebase Analytics event data is retained per app instance for <strong>14 months</strong>, after which only aggregate reports remain; Google's retention as processor is described in the Firebase privacy documentation.</li>
+<li>Retention of data collected by Google (AdMob) is described in Google's Privacy Policy.</li>
 </ul>
 <h2>7. Children</h2>
 <p>The Game is <strong>not directed to children under 13</strong> (or the equivalent minimum age in your country) and is not designed for the Google Play Families program or the App Store Kids category. I do not knowingly collect personal information from children. If you believe a child has provided personal information through the Game, contact me at the address above.</p>
 <h2>8. Your rights</h2>
 <p>Depending on where you live (for example under the GDPR, UK GDPR, or the California Consumer Privacy Act), you may have rights to access, delete, correct, or object to the processing of your personal information, and to withdraw consent.</p>
-<p>Because the Game does not send your save data or any identifiers to me, I generally hold <strong>no personal information about you</strong> that I could access or delete. You can delete all game data by uninstalling the Game. For data processed by Google in connection with ads, you can exercise your rights through Google (see the links in Section 3). You may also contact me at the address above, and you have the right to lodge a complaint with your local data protection authority.</p>
+<p>Because the Game does not send your save data or anything that directly identifies you to me, I generally hold <strong>no personal information that I can match to you</strong> that I could access or delete. Uninstalling the Game deletes all local game data and resets the Firebase app-instance identifier; the cloud save can be deleted in the Game under Settings → Cloud Save → "Delete Cloud Data". If you would like me to delete the analytics data associated with your app instance, contact me with the approximate time you played and your device model, and I will do my best to process it through Firebase's deletion interface; because I hold no identifier that maps an app instance to you, this may not be an exact match. For data processed by Google in connection with ads, you can exercise your rights through Google (see the links in Section 3). You may also contact me at the address above, and you have the right to lodge a complaint with your local data protection authority.</p>
 <p>I do <strong>not sell</strong> your personal information and do not "share" it for cross-context behavioral advertising as those terms are defined under California law, other than the limited, non-personalized ad delivery by Google described above.</p>
 <h2>9. Security</h2>
-<p>Network requests made by the Game and by Google's SDK use encrypted connections (HTTPS/TLS). The local save file is integrity-protected.</p>
+<p>Network requests made by the Game and by Google's SDK use encrypted connections (HTTPS/TLS). Both the local save file and the cloud save are integrity-protected.</p>
 <h2>10. Changes to this policy</h2>
 <p>If this policy changes, I will update the "Last updated" date above and post the new version at this address. For material changes, I will also give notice in the Game or on its store page.</p>
 <h2>11. Contact</h2>
